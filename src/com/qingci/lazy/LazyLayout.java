@@ -74,7 +74,7 @@ public class LazyLayout {
 
     private void buildPackageField() {
         pkg = new JTextField();
-        pkg.setText(Objects.nonNull(Data.convertPackage) ?  Data.convertPackage.getQualifiedName() : "");
+        pkg.setText(Objects.nonNull(Cache.convertPackage) ?  Cache.convertPackage.getQualifiedName() : "");
         converter.add(pkg, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
     }
 
@@ -122,7 +122,7 @@ public class LazyLayout {
             if (Objects.nonNull(selectedPackage)) {
                 String pkgPath = selectedPackage.getQualifiedName();
                 pkg.setText(pkgPath);
-                Data.setConvertPackage(selectedPackage);
+                Cache.setConvertPackage(selectedPackage);
 
                 PropertiesComponent.getInstance(project).setValue("choosePkg",selectedPackage.getQualifiedName());
 
