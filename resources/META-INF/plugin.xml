@@ -7,7 +7,7 @@
   <description><![CDATA[
       <h3>A tool for simplify duplicate class</h3>
       <ul>
-        <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework</li>
+        <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework  [Ctrl + 1]</li>
       </ul>
     ]]></description>
 
