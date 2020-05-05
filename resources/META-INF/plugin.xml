@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>com.qingci.lazy</id>
+  <name>Lazy</name>
+  <version>1.0.0-BETA</version>
+  <vendor email="yuanqingx@aliyun.com" url="https://github.com/yuanqingx">青</vendor>
+
+  <description><![CDATA[
+      <h3>A tool for simplify duplicate class</h3>
+      <ul>
+        <li>pojo converter,such as DO,VO,DTO,BO,etc</li>
+      </ul>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <h3></h3>
+      <ul>
+        <li>feature: pojo converter,such as DO,VO,DTO,BO,etc</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.qingci.lazy.PopupDialogAction" class="com.qingci.lazy.PopupDialogAction" text="Lazy Converter">
+      <add-to-group group-id="NewGroup" anchor="last"/>
+      <keyboard-shortcut first-keystroke="control 1" keymap="$default"/>
+    </action>
+  </actions>
+
+</idea-plugin>
