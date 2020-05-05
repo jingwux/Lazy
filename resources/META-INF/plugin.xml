@@ -7,14 +7,14 @@
   <description><![CDATA[
       <h3>A tool for simplify duplicate class</h3>
       <ul>
-        <li>pojo converter,such as DO,VO,DTO,BO,etc</li>
+        <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework</li>
       </ul>
     ]]></description>
 
   <change-notes><![CDATA[
-      <h3></h3>
+      <h3>[1.0.0-BETA]-[2020.05.04]</h3>
       <ul>
-        <li>feature: pojo converter,such as DO,VO,DTO,BO,etc</li>
+        <li>feature: pojo converter support</li>
       </ul>
     ]]>
   </change-notes>
