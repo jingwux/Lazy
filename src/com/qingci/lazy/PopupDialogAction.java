@@ -115,7 +115,7 @@ public class PopupDialogAction extends AnAction {
                 .append("@Override\r\n")
                 .append("public ").append(targetClass).append(" convert(").append(sourceClass).append(" source) {\r\n")
                 .append(targetClass).append(" target = new ").append(targetClass).append("();\r\n")
-                .append("BeanUtils.copyProperties(source.data(), target);\r\n")
+                .append("BeanUtils.copyProperties(source, target);\r\n")
                 .append("return target;\r\n")
                 .append("}")
                 .append("}");
