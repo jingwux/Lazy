@@ -3,7 +3,6 @@ package com.qingci.lazy;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -40,7 +39,7 @@ public class PopupDialogAction extends AnAction {
 
         if (ok) {
             ConverterData data = myDialog.getData();
-            String choosePkg = PropertiesComponent.getInstance(project).getValue("choosePkg");
+            String choosePkg = PropertiesComponent.getInstance(project).getValue(project.getLocationHash() + "_choosePkg");
 
             if (StringUtils.isBlank(choosePkg)) {
                 return;

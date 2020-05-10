@@ -31,12 +31,12 @@ public class MyDialog extends DialogWrapper {
     @Nullable
     @Override
     protected ValidationInfo doValidate() {
-//        if (layout.getConvertData().getSourceClass() == null) {
-//            return new ValidationInfo("1");
-//        }
-//         if (layout.getConvertData().getTargetClass() == null) {
-//            return new ValidationInfo("2");
-//        }
+        if (layout.getConvertData().getSourceClass() == null) {
+            return new ValidationInfo("请选择 Source Pojo");
+        }
+         if (layout.getConvertData().getTargetClass() == null) {
+            return new ValidationInfo("请选择 Target Pojo");
+        }
         return null;
     }
 }
