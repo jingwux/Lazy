@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-public class PopupDialogAction extends AnAction {
+public class ConverterDialogAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         Project project = e.getProject();

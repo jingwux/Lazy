@@ -32,9 +32,14 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="com.qingci.lazy.PopupDialogAction" class="com.qingci.lazy.PopupDialogAction" text="Lazy Converter">
+    <action id="com.qingci.lazy.ConverterDialogAction" class="com.qingci.lazy.ConverterDialogAction" text="Lazy Converter">
       <add-to-group group-id="NewGroup" anchor="last"/>
       <keyboard-shortcut first-keystroke="control 1" keymap="$default"/>
+    </action>
+    <action id="com.qingci.lazy.FindConverterAction" class="com.qingci.lazy.FindConverterAction" text="Find Pojo Converter"
+            description="FindConverterAction">
+      <add-to-group group-id="EditorPopupMenu1.FindRefactor" anchor="after" relative-to-action="FindUsages"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl 2"/>
     </action>
   </actions>
 
