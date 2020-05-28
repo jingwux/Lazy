@@ -23,13 +23,11 @@ public class FindConverterAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         Project project = e.getProject();
         SelectionModel selectionModel = e.getData(PlatformDataKeys.EDITOR).getSelectionModel();
-
         PsiFile file = e.getData(CommonDataKeys.PSI_FILE);
 
         selectionModel.selectLineAtCaret();
         String line = selectionModel.getSelectedText();
         selectionModel.removeSelection();
-
 
         String regex = "convert[(].*\\.class";
         Pattern r = Pattern.compile(regex);

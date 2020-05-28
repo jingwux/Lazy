@@ -8,6 +8,7 @@
       <h3>A tool for simplify duplicate class</h3>
       <ul>
         <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework  [Ctrl + 1]</li>
+        <li>find convert  [Ctrl + 2]</li>
       </ul>
     ]]></description>
 
@@ -15,6 +16,7 @@
       <h3>[1.0.0-BETA]-[2020.05.04]</h3>
       <ul>
         <li>feature: pojo converter support</li>
+        <li>feature: pojo converter finder</li>
       </ul>
     ]]>
   </change-notes>
