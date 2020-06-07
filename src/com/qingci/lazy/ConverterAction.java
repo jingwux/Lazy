@@ -12,6 +12,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.CodeStyleManager;
+import com.intellij.psi.impl.source.PsiClassImpl;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.GlobalSearchScopesCore;
 import org.apache.commons.io.FileUtils;
@@ -52,8 +53,8 @@ public class ConverterAction extends AnAction {
             PsiDirectory directory = pkg.getDirectories(GlobalSearchScopesCore.projectProductionScope(project))[0];
 
             WriteCommandAction.runWriteCommandAction(project, () -> {
-                String sourceClass = data.getSourceClass().getName();
-                String targetClass = data.getTargetClass().getName();
+                String sourceClass = getClassNameWithParent(data.getSourceClass());
+                String targetClass = getClassNameWithParent(data.getTargetClass());
                 String convert = sourceClass + "2" + targetClass + "Converter";
                 PsiFile file = directory.createFile(convert + ".java");
                 if (file instanceof PsiJavaFile) {
@@ -64,7 +65,7 @@ public class ConverterAction extends AnAction {
                     VirtualFile virtualFile = converterFile.getVirtualFile();
                     VirtualFileManager manager = VirtualFileManager.getInstance();
 
-                    String content = buildContent(sourceClass, targetClass, convert);
+                    String content = buildContent(data.getSourceClass().getName(), data.getTargetClass().getName(), convert);
 
                     // write content
                     try {
@@ -104,6 +105,18 @@ public class ConverterAction extends AnAction {
             });
         }
 
+    }
+
+    private String getClassNameWithParent(PsiClass sourceClass) {
+        PsiElement p = sourceClass.getParent();
+        if (p instanceof PsiClassImpl) {
+            PsiClassImpl parent = (PsiClassImpl) p;
+            PsiClass psiClass = parent.findInnerClassByName("Parent", true);
+            if (Objects.nonNull(psiClass)) {
+                return parent.getName() + sourceClass.getName();
+            }
+        }
+        return sourceClass.getName();
     }
 
     @NotNull
