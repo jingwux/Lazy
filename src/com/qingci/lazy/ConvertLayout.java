@@ -107,7 +107,7 @@ public class ConvertLayout {
 
     private PsiClass chooseDialog(String title) {
         TreeClassChooserFactory instance = TreeClassChooserFactory.getInstance(project);
-        TreeClassChooser chooser = instance.createProjectScopeChooser(title);
+        TreeClassChooser chooser = instance.createAllProjectScopeChooser(title);
         chooser.showDialog();
         return chooser.getSelected();
     }
