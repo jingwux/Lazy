@@ -14,7 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public class LazyLayout {
+public class ConvertLayout {
     private JPanel converter;
     private JTextField target;
     private JTextField source;
@@ -27,7 +27,7 @@ public class LazyLayout {
 
     private Project project;
 
-    public LazyLayout(Project project) {
+    public ConvertLayout(Project project) {
         this.project = project;
         converterData = new ConverterData();
         setupUI();
@@ -138,15 +138,6 @@ public class LazyLayout {
      */
     public JComponent $$$getRootComponent$$$() {
         return converter;
-    }
-
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("demo");
-        frame.setContentPane(new LazyLayout(null).converter);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
     }
 
     public ConverterData getConvertData() {

@@ -7,14 +7,14 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class MyDialog extends DialogWrapper {
+public class ConvertDialog extends DialogWrapper {
 
-    private LazyLayout layout;
+    private ConvertLayout layout;
 
-    protected MyDialog(@Nullable Project project) {
+    protected ConvertDialog(@Nullable Project project) {
         super(true);
         setTitle("Pojo Converter");
-        layout = new LazyLayout(project);
+        layout = new ConvertLayout(project);
         init();
     }
 

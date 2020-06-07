@@ -35,7 +35,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="com.qingci.lazy.ConverterDialogAction" class="com.qingci.lazy.ConverterDialogAction" text="Lazy Converter">
+    <action id="com.qingci.lazy.ConverterAction" class="com.qingci.lazy.ConverterAction" text="Lazy Converter">
       <add-to-group group-id="NewGroup" anchor="last"/>
       <keyboard-shortcut first-keystroke="control 1" keymap="$default"/>
     </action>

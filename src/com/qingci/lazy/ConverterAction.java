@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-public class ConverterDialogAction extends AnAction {
+public class ConverterAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         Project project = e.getProject();
@@ -32,13 +32,13 @@ public class ConverterDialogAction extends AnAction {
             return;
         }
 
-        MyDialog myDialog = new MyDialog(project);
-        myDialog.show();
-        myDialog.doValidate();
-        boolean ok = myDialog.isOK();
+        ConvertDialog convertDialog = new ConvertDialog(project);
+        convertDialog.show();
+        convertDialog.doValidate();
+        boolean ok = convertDialog.isOK();
 
         if (ok) {
-            ConverterData data = myDialog.getData();
+            ConverterData data = convertDialog.getData();
             String choosePkg = PropertiesComponent.getInstance(project).getValue(project.getLocationHash() + "_choosePkg");
 
             if (StringUtils.isBlank(choosePkg)) {
