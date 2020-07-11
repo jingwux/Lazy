@@ -1,4 +1,4 @@
-package com.qingci.lazy;
+package com.qingci.lazy.data;
 
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiPackage;

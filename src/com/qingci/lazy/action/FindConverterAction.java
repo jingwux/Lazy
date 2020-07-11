@@ -1,4 +1,4 @@
-package com.qingci.lazy;
+package com.qingci.lazy.action;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.actionSystem.AnAction;

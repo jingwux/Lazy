@@ -1,4 +1,4 @@
-package com.qingci.lazy;
+package com.qingci.lazy.action;
 
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -16,6 +16,8 @@ import com.intellij.psi.impl.source.PsiClassImpl;
 import com.intellij.psi.impl.source.PsiJavaFileImpl;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.GlobalSearchScopesCore;
+import com.qingci.lazy.dialog.ConvertDialog;
+import com.qingci.lazy.data.ConverterData;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;

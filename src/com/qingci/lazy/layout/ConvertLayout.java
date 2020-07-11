@@ -1,4 +1,4 @@
-package com.qingci.lazy;
+package com.qingci.lazy.layout;
 
 import com.intellij.ide.util.PackageChooserDialog;
 import com.intellij.ide.util.PropertiesComponent;
@@ -9,6 +9,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiPackage;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.qingci.lazy.data.ConverterData;
 
 import javax.swing.*;
 import java.awt.*;
@@ -123,9 +124,8 @@ public class ConvertLayout {
             if (Objects.nonNull(selectedPackage)) {
                 String pkgPath = selectedPackage.getQualifiedName();
                 pkg.setText(pkgPath);
-                Cache.setConvertPackage(selectedPackage);
 
-                PropertiesComponent.getInstance(project).setValue(project.getLocationHash() + "_choosePkg",selectedPackage.getQualifiedName());
+                PropertiesComponent.getInstance(project).setValue(project.getLocationHash() + "_choosePkg", selectedPackage.getQualifiedName());
 
                 converterData.setConverterPackage(selectedPackage);
             }

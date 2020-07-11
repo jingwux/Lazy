@@ -49,10 +49,10 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="com.qingci.lazy.ConverterAction" class="com.qingci.lazy.ConverterAction" text="Lazy Converter">
+        <action id="com.qingci.lazy.action.ConverterAction" class="com.qingci.lazy.action.ConverterAction" text="Lazy Converter">
             <add-to-group group-id="NewGroup" anchor="last"/>
         </action>
-        <action id="com.qingci.lazy.FindConverterAction" class="com.qingci.lazy.FindConverterAction"
+        <action id="com.qingci.lazy.action.FindConverterAction" class="com.qingci.lazy.action.FindConverterAction"
                 text="Find Pojo Converter"
                 description="FindConverterAction">
             <add-to-group group-id="EditorPopupMenu1.FindRefactor" anchor="after" relative-to-action="FindUsages"/>
