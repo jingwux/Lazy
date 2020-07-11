@@ -5,15 +5,20 @@
     <vendor email="yuanqingx@aliyun.com" url="https://github.com/yuanqingx">青</vendor>
 
     <description><![CDATA[
-      <h3>A tool for simplify duplicate class</h3>
+      <h3>A tool for Spring converter</h3>
       <ul>
-        <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework  [Ctrl + 1]</li>
-        <li>find convert  [Ctrl + 2]</li>
+        <li>pojo converter,such as DO,VO,DTO,BO,etc, depend by Spring Framework [Last One of new]</li>
+        <li>find convert [ALt + L]</li>
       </ul>
     ]]></description>
 
     <change-notes><![CDATA[
-      <h3>[1.0.1]-[2020.06.14]</h3>
+      <h3>[1.0.2]-[2020.07.11]</h3>
+      <ul>
+        <li>fix: unable to find converter in complex statement</li>
+        <li>fix: create converter support all outer class</li>
+      </ul>
+     <h3>[1.0.1]-[2020.06.14]</h3>
       <ul>
         <li>fix: find Converter with block and in return</li>
       </ul>
@@ -46,13 +51,12 @@
         <!-- Add your actions here -->
         <action id="com.qingci.lazy.ConverterAction" class="com.qingci.lazy.ConverterAction" text="Lazy Converter">
             <add-to-group group-id="NewGroup" anchor="last"/>
-            <keyboard-shortcut first-keystroke="control 1" keymap="$default"/>
         </action>
         <action id="com.qingci.lazy.FindConverterAction" class="com.qingci.lazy.FindConverterAction"
                 text="Find Pojo Converter"
                 description="FindConverterAction">
             <add-to-group group-id="EditorPopupMenu1.FindRefactor" anchor="after" relative-to-action="FindUsages"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl 2"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt l"/>
         </action>
     </actions>
 
