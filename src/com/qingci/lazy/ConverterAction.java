@@ -13,6 +13,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.impl.source.PsiClassImpl;
+import com.intellij.psi.impl.source.PsiJavaFileImpl;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.GlobalSearchScopesCore;
 import org.apache.commons.io.FileUtils;
@@ -53,8 +54,8 @@ public class ConverterAction extends AnAction {
             PsiDirectory directory = pkg.getDirectories(GlobalSearchScopesCore.projectProductionScope(project))[0];
 
             WriteCommandAction.runWriteCommandAction(project, () -> {
-                String sourceClass = getClassNameWithParent(data.getSourceClass());
-                String targetClass = getClassNameWithParent(data.getTargetClass());
+                String sourceClass = getClassNameWithParentClassName(data.getSourceClass());
+                String targetClass = getClassNameWithParentClassName(data.getTargetClass());
                 String convert = sourceClass + "2" + targetClass + "Converter";
                 PsiFile file = directory.createFile(convert + ".java");
                 if (file instanceof PsiJavaFile) {
@@ -105,6 +106,10 @@ public class ConverterAction extends AnAction {
             });
         }
 
+    }
+
+    private String getClassNameWithParentClassName(PsiClass sourceClass) {
+        return sourceClass.getQualifiedName().replace(((PsiJavaFileImpl) sourceClass.getContainingFile()).getPackageName(), "").replaceAll("\\.", "");
     }
 
     private String getClassNameWithParent(PsiClass sourceClass) {
