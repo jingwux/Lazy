@@ -13,7 +13,7 @@ public class ConvertDialog extends DialogWrapper {
 
     private ConvertLayout layout;
 
-    protected ConvertDialog(@Nullable Project project) {
+    public ConvertDialog(@Nullable Project project) {
         super(true);
         setTitle("Pojo Converter");
         layout = new ConvertLayout(project);
@@ -32,11 +32,11 @@ public class ConvertDialog extends DialogWrapper {
 
     @Nullable
     @Override
-    protected ValidationInfo doValidate() {
+    public ValidationInfo doValidate() {
         if (layout.getConvertData().getSourceClass() == null) {
             return new ValidationInfo("请选择 Source Pojo");
         }
-         if (layout.getConvertData().getTargetClass() == null) {
+        if (layout.getConvertData().getTargetClass() == null) {
             return new ValidationInfo("请选择 Target Pojo");
         }
         return null;
