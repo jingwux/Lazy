@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.qingci.lazy</id>
     <name>Lazy</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="yuanqingx@aliyun.com" url="https://github.com/yuanqingx">青</vendor>
 
     <description><![CDATA[
